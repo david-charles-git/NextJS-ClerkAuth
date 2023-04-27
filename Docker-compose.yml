@@ -10,3 +10,11 @@ services:
       - .:/app
     environment:
       - NODE_ENV=development
+#   mongo:
+#     image: mongo
+#     ports:
+#       - "27017:27017"
+#     volumes:
+#       - mongo-data:/data/db
+# volumes:
+#   mongo-data:

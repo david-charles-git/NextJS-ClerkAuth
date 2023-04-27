@@ -8,7 +8,7 @@ var server_2 = require("next/server");
 from;
 'next/server';
 // Set the paths that don't require the user to be signed in
-var publicPaths = ['/', '/signin*', '/signup*', '/public*'];
+var publicPaths = ['/', '/signin*', '/signup*', '/api*', '/public*']; //exposed /api so I can test api routes
 var isPublic = function (path) {
     var isPublic = publicPaths.find(function (x) { return path.match(new RegExp(("^" + x + "$").replace('*$', '($|/)'))); });
     return isPublic;

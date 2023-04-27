@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 // Set the paths that don't require the user to be signed in
-const publicPaths : Array<string> = ['/', '/signin*', '/signup*', '/public*'];
+const publicPaths : Array<string> = ['/', '/signin*', '/signup*', '/api*', '/public*']; //exposed /api so I can test api routes
 
 const isPublic : (path : string) => string | undefined = (path) => {
 	const isPublic : string | undefined = publicPaths.find(x => path.match(new RegExp(`^${x}$`.replace('*$', '($|/)'))));
