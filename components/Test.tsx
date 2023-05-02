@@ -3,8 +3,16 @@
 import { useEffect, useState } from "react";
 import axios, { AxiosResponse } from "axios";
 import { User } from "@/lib/types/user";
+// import getUsers from "@/functions/getUsers";
+
+// const getUsers : () => Promise<User[]> = async () => {
+//     const response : AxiosResponse<User[]> = await axios.get(`/api/users`);
+
+//     return response.data;
+// };
 
 const Test = () => {
+    // var users = use(getUsers());
     const [users, setUsers] = useState<User[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(false);
 

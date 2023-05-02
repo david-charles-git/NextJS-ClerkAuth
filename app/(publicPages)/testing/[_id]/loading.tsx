@@ -1,4 +1,4 @@
-export default function Loading() {
-    // You can add any UI inside Loading, including a Skeleton.
+const Loading : React.FC = () => {
     return <p>Loading</p>
-  }
+};
+export default Loading;

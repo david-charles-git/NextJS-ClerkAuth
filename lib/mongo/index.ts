@@ -6,15 +6,15 @@ if (!MONGODB_URI) { throw new Error("Please define the MONGODC_URI in .env.local
 
 if (!MONGODB_DB_ONE) { throw new Error("Please define the MONGODB_DB  in .env.local"); }
 
-let cachedConnection = global.mongo;
+let cachedConnection : any = global.mongo;
 
 if (!cachedConnection) { cachedConnection = global.mongo = { conn : null, promise : null }; }
 
-const connectToDatabase = async () => {
+const connectToDatabase : () => Promise<any> = async () => {
     if (cachedConnection.conn) return cachedConnection.conn;
 
     if (!cachedConnection.promise) {
-        const options = {
+        const options : any = {
             useNewUrlParser : true,
             useUnifiedTopology : true
         };

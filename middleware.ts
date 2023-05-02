@@ -3,6 +3,7 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 const publicPaths : string[] = ['/', '/signin*', '/signup*', '/api*', "/testing*"];
+const privatePaths : string[] = ['/profile*'];
 const adminRestrictedPaths : string[] = ['/admin*'];
 const memberRestrictedPaths : string[] = ['/restricted*'];
 
@@ -10,6 +11,22 @@ const isPublic : (path : string) => string | undefined = (path) => {
 	const isPublic : string | undefined = publicPaths.find((x) => { return path.match(new RegExp(`^${x}$`.replace('*$', '($|/)'))); });
 
 	return isPublic;
+};
+
+const isPrivate : (path : string) => string | undefined = (path) => {
+	const mergedPrivatePaths : () => string[] = () => {
+		var mergedPrivatePaths : string[] = [];
+			mergedPrivatePaths.concat(privatePaths);
+			mergedPrivatePaths.concat(adminRestrictedPaths);
+			mergedPrivatePaths.concat(memberRestrictedPaths);
+	
+		return mergedPrivatePaths;
+	};
+
+	const paths : string[] = mergedPrivatePaths();
+	const isPrivate : string | undefined = paths.find((x) => { return path.match(new RegExp(`^${x}$`.replace('*$', '($|/)'))); });
+
+	return isPrivate;
 };
 
 const isAdminRestricted : (path : string) =>  string | undefined = (path) => {
