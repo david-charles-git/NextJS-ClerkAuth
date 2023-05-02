@@ -1,5 +1,7 @@
 import { MongoClient } from "mongodb";
 
+declare global { var mongo : any; }
+
 const { MONGODB_URI, MONGODB_DB_ONE } = process.env;
 
 if (!MONGODB_URI) { throw new Error("Please define the MONGODC_URI in .env.local"); }

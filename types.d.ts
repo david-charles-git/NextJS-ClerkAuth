@@ -1,7 +1,3 @@
-declare global {
-    var mongo : any;
-}
-
 type UserPermission = "admin" | "member" | "none";
 
 interface User {
