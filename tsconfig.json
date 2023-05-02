@@ -20,9 +20,15 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@/styles/*" : ["./styles/*"],      
+      "@/components/*" : ["./components/*"],      
+      "@/ui/*" : ["./components/ui/*"],      
+      "@/lib/*" : ["./lib/*"],
+      "@/types/*" : ["./types/*"],
+      "@/functions/*" : ["./functions/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "lib/mongo/users.js", "lib/mongo/index.ts", "app/api/users/route.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "lib/mongo/index.js", "app/api/users/route.ts"],
   "exclude": ["node_modules"]
 }

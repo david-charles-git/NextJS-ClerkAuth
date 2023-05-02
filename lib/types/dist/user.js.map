@@ -1,0 +1,1 @@
+{"version":3,"sources":["user.ts"],"names":[],"mappings":";;AAQC,CAAC","file":"user.js","sourcesContent":["export type UserPermission = \"admin\" | \"member\" | \"none\";\r\n\r\nexport interface User {\r\n    _id? : string,\r\n    name : string,\r\n    email : string,\r\n    password : string,\r\n    permissions : UserPermission\r\n};"]}

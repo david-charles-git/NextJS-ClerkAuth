@@ -1,0 +1,1 @@
+{"version":3,"sources":["get_users.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA,SAAsB,GAAG,CAAC,OAAgB;;;YACtC,sBAAO,IAAI,QAAQ,CAAC,iBAAiB,CAAC,EAAA;;;CACvC;AAFH,kBAEG","file":"get_users.js","sourcesContent":["export async function GET(request: Request) {\r\n    return new Response('Hello, Next.js!')\r\n  }\r\n  "]}
