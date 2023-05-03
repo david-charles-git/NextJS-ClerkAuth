@@ -25,8 +25,8 @@
       "@/components/*" : ["./components/*"],      
       "@/ui/*" : ["./components/ui/*"],      
       "@/lib/*" : ["./lib/*"],
-      "@/types/*" : ["./types/*"],
-      "@/functions/*" : ["./functions/*"]
+      "@/types/*" : ["./lib/types/*"],
+      "@/functions/*" : ["./lib/functions/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "lib/mongo/index.ts", "app/api/users/route.ts"],
