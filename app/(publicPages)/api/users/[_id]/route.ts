@@ -29,8 +29,8 @@ const DELETE : (request : NextRequest, { params } : { params : { _id : string } 
 const PATCH : (request : NextRequest, { params } : { params : { _id : string } }) => Promise<NextResponse> = async (request, { params }) => {
     const { client } = await connectToDatabase();
     const dataBase = await client.db(dataBaseName);
-    const _id : string = params._id;
     const body : User = await request.json();
+    const _id : string = params._id;
     const update = [ { $set : { name : body.name, email : body.email, password : body.password, permissions : body.permissions } }];
     const objectID : ObjectId = new ObjectId(_id);
     const data = await dataBase.collection(collectionName).updateOne({ _id : objectID }, update);
